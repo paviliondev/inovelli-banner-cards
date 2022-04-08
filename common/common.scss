@@ -1,0 +1,129 @@
+$bannerImageWidth: 250px;
+$mainRadius: 6px;
+
+:root {
+  --bannerCardHeight: 90px;
+}
+
+@mixin displayTransition() {
+  transition: height 0.385s ease-in-out, opacity 0.25s ease-in-out;
+}
+
+.inovelli-banner-cards {
+  &-container {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: center;
+    margin-left: 0;
+    gap: 1rem 1rem;
+  }
+
+  .inovelli-banner-card {
+    flex: 1 1 100%;
+    @media screen and (min-width: 366px) {
+      flex: 0 0 165px;
+      min-width: 165px;
+    }
+    height: var(--bannerCardHeight);
+
+    &-container {
+      box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
+      border-radius: $mainRadius;
+      transform: scale(1.02);
+      background: var(--header_background);
+      border: 1px solid var(--header_primary-low);
+
+      .inovelli-banner-card-front {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        height: var(--bannerCardHeight);
+        @include displayTransition();
+
+        &-title {
+          align-self: center;
+          transform: translateX(-0.25em);
+          line-height: 1em;
+          font-family: var(--heading-font-family);
+          font-weight: 700;
+          font-size: var(--font-0);
+        }
+
+        &-image {
+          max-width: $bannerImageWidth;
+          border-radius: 6px;
+          height: var(--bannerCardHeight);
+
+          img {
+            height: 100%;
+            border-top-left-radius: $mainRadius;
+            border-bottom-left-radius: $mainRadius;
+            max-width: $bannerImageWidth;
+          }
+        }
+      }
+
+      .inovelli-banner-card-back {
+        height: 0;
+        opacity: 0;
+        @include displayTransition();
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .inovelli-banner-card-front {
+          height: 0;
+          opacity: 0;
+        }
+
+        .inovelli-banner-card-back {
+          height: var(--bannerCardHeight);
+          opacity: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 200px;
+          margin: 0 auto;
+          padding-left: 20px;
+          position: relative;
+          font-weight: 700;
+          font-family: var(--heading-font-family);
+          line-height: 1em;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 2.5em;
+            bottom: 2.5em;
+            width: 8px;
+            left: 0;
+            background: var(--tertiary);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 426px) {
+  :root {
+    --bannerCardHeight: 125px;
+  }
+
+  .inovelli-banner-cards {
+    .inovelli-banner-cards-container {
+      gap: 2rem 2rem;
+    }
+
+    .inovelli-banner-card {
+      flex: 0 0 250px;
+      min-width: unset;
+
+      &-front {
+        font-size: var(--font-up-2);
+      }
+    }
+  }
+}

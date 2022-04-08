@@ -1,0 +1,30 @@
+banner_cards:
+  description:
+    en: The cards and their contents that appear on the homepage
+  default: >-
+    [
+      {"title":"Switches & Wiring","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/switches","contents":"Wiring Discussion, Troubleshooting, Firmware, & Wiki/How-To's"},
+      {"title":"Lighting","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/lighting","contents":"Troubleshooting, Firmware, & Wiki/How-To's for LED Bulbs & Lightstrips'"},
+      {"title":"Sensors","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/sensors","contents":"Troubleshooting, Firmware, & Wiki/How-To's for Sensors"},
+      {"title":"Other","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/other-products","contents":"Troubleshooting, Firmware, & Wiki/How-To's for Other Inovelli Products"},
+      {"title":"So Hot Right Now","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/inovelli-so-hot-right-now","contents":"News, project discussions, roadmaps and anything else Inovelli related"},
+      {"title":"Wiki","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/inovelli-wiki","contents":"Learn from and grow our community Wiki"},
+      {"title":"How-To's & Flex Zone","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/how-to-flex-zone","contents":"Show off your automations, gadgets, and teach others how you got those 💎🤲"},
+      {"title":"Digital Lounge","image_url":"https://cdn11.bigcommerce.com/s-f5v31ey6uk/images/stencil/1280x1280/e/bulb_page__04143.original compressed_category.original.jpg","link_url":"/c/digital-lounge","contents":"A catch-all for any topic outside of the categories listed. Keep it PG-13"}
+    ]
+  json_schema: '
+  { 
+    "type": "array", 
+    "format": "table",
+     "uniqueItems": true,
+      "items": { 
+        "type": "object",
+        "properties": 
+        { 
+          "title": { "type": "string", "minLength": 1 }, 
+          "image_url": { "type": "string", "minLength": 1 },
+          "link_url": { "type": "string", "minLength": 1 },
+          "contents": { "type": "string", "minLength": 1 }
+        }, 
+        "additionalProperties": false } 
+      }'
