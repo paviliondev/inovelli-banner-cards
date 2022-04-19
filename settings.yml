@@ -22,7 +22,7 @@ banner_cards:
         "properties": 
         { 
           "title": { "type": "string", "minLength": 1 }, 
-          "image_url": { "type": "string", "minLength": 1 },
+          "image_url": { "type": "string", "minLength": 1, "description": "Type none for no image" },
           "link_url": { "type": "string", "minLength": 1 },
           "contents": { "type": "string", "minLength": 1 }
         }, 

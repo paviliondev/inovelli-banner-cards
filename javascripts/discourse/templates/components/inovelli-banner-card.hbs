@@ -1,8 +1,10 @@
 <div class='inovelli-banner-card-container' {{action 'toggleCard' card}}>
-  <div class='inovelli-banner-card-front'>
-    <div class='inovelli-banner-card-front-image'>
-      <img src={{card.image_url}} alt='' />
-    </div>
+  <div class='inovelli-banner-card-front {{if noImage "no-image"}}'>
+    {{#unless noImage}}
+      <div class='inovelli-banner-card-front-image'>
+        <img src={{card.image_url}} alt='' />
+      </div>
+    {{/unless}}
     <div class='inovelli-banner-card-front-title'>
       {{card.title}}
     </div>

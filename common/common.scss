@@ -41,6 +41,11 @@ $mainRadius: 0px;
         height: var(--bannerCardHeight);
         @include displayTransition();
 
+        &.no-image .inovelli-banner-card-front-title {
+          margin: 0 auto;
+          transform: translateX(0);
+        }
+
         &-title {
           align-self: center;
           transform: translateX(-0.25em);
