@@ -28,11 +28,10 @@ $mainRadius: 0px;
     height: var(--bannerCardHeight);
 
     &-container {
-      box-shadow: 0px 0px 33px rgba(0, 0, 0, 0.15);
       border-radius: $mainRadius;
       transform: scale(1.02);
       background: var(--header_background);
-      border: 1px solid var(--header_primary-low);
+      border: 1px solid var(--primary-low);
 
       .inovelli-banner-card-front {
         display: flex;
